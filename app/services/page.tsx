@@ -1,11 +1,5 @@
-import {
-  ArrowUpRight,
-  Activity,
-  Newspaper,
-  Monitor,
-  Smartphone,
-} from "lucide-react";
-import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+
 import Navbar from "../components/navbar";
 import Cta from "../components/cta";
 import Link from "next/link";

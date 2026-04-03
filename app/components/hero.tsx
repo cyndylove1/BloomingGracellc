@@ -1,5 +1,4 @@
-import React from "react";
-import { Search, ArrowUpRight, ChevronDown, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import Navbar from "./navbar";
 
 export default function Hero() {

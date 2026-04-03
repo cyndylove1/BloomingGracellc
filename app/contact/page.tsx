@@ -1,6 +1,5 @@
 "use client";
-import { MapPin, Phone, Mail, ArrowRight, ArrowUpRight } from "lucide-react";
-import Cta from "../components/cta";
+import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import Navbar from "../components/navbar";
 
 export default function Contact() {

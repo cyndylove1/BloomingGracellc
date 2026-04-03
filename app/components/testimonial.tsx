@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { Quote, ChevronLeft, ChevronRight, Star, Activity } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";

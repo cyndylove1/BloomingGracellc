@@ -1,5 +1,4 @@
-import React from "react";
-import { ArrowUpRight, Activity, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Cta from "../components/cta";
 import Navbar from "../components/navbar";

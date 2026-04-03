@@ -1,3 +1,4 @@
+"use client";
 import Hero from "./components/hero";
 import HowWeWork from "./components/howWeWork";
 import WhyUs from "./components/whyus";

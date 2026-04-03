@@ -1,11 +1,4 @@
-import React from "react";
-import {
-  ArrowUpRight,
-  Activity,
-  Newspaper,
-  Monitor,
-  Smartphone,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ServicesSection() {

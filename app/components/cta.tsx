@@ -1,5 +1,5 @@
 "use client";
-import { Mail, ArrowRight, Sparkles, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 export default function Cta() {
   return (
