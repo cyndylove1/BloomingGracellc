@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
+
 
 export default function Testimonial() {
   // Create refs for custom navigation buttons
@@ -69,7 +69,7 @@ export default function Testimonial() {
                 Testimonials
               </span>
             </div>
-            <h2 className="text-[#0A0F2D] text-xl md:text-3xl font-bold leading-tight">
+            <h2 className="text-[#0A0F2D] text-xl md:text-4xl font-serif italics leading-tight">
               Stories From Our <span className="text-[#8268EE]">Client</span>
             </h2>
           </div>

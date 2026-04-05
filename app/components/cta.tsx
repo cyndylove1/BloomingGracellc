@@ -5,7 +5,7 @@ export default function Cta() {
   return (
     <section className="bg-white py-12 md:py-24 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="relative w-full bg-[#8268EE] rounded-[40px] p-8 md:p-20 overflow-hidden shadow-2xl">
+        <div className="relative w-full bg-[#7C5CFC] rounded-[40px] p-8 md:p-20 overflow-hidden shadow-2xl">
           {/* BACKGROUND DESIGN: Premium Mesh & Orbs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* Soft Purple Glow */}

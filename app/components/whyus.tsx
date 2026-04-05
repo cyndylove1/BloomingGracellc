@@ -1,86 +1,108 @@
-export default function WhyUs() {
-  const steps = [
-    {
-      number: "1",
-      title: "Experienced & Highly Trained Professionals",
-      description:
-        "We carefully select candidates with proven experience in private households. From nannies to estate managers, every professional is trained to deliver exceptional service, adapt to your lifestyle, and maintain the highest standards of care and professionalism within your home.",
-      imageUrl: "/assets/consult13.PNG",
-    },
-    {
-      number: "2",
-      title: "Rigorous Screening & Vetting Process",
-      description:
-        "Your safety and peace of mind are our priority. Every candidate undergoes thorough background checks, identity verification, reference validation, and in-depth interviews to ensure they meet our strict standards before being introduced to your household.",
-      imageUrl: "/assets/screening.jpg",
-    },
+"use client";
+import React from "react";
+import { ShieldCheck, Zap, CalendarClock, Headset, MapPin } from "lucide-react";
 
+export default function WhyUs() {
+  const reasons = [
     {
-      number: "3",
-      title: "Commitment to Excellence",
-      description:
-        "We are dedicated to delivering the highest level of service by consistently maintaining quality standards, building trust, and exceeding expectations for every client we serve.",
-      imageUrl: "/assets/commitment.jpg",
+      title: "Licensed & Verified Professionals",
+      desc: "Every staff member undergoes rigorous multi-layer background checks and credential validation.",
+      icon: <ShieldCheck size={24} />,
+    },
+    {
+      title: "Fast Placement",
+      desc: "Our streamlined matching process cuts wait times significantly, filling vacancies in record time.",
+      icon: <Zap size={24} />,
+    },
+    {
+      title: "24/7 Dedicated Support",
+      desc: "Our coordination team is on-call round the clock to handle emergencies and schedule changes.",
+      icon: <Headset size={24} />,
+    },
+    {
+      title: "Flexible Scheduling",
+      desc: "Customized staffing solutions that adapt to your evolving facility needs and patient volumes.",
+      icon: <CalendarClock size={24} />,
     },
   ];
 
   return (
-    <section className="bg-[#D1D5F5] py-24 px-4 md:px-6 lg:px-12 font-sans overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Title */}
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-[#7C5CFC] font-bold text-xl">✦</span>
-            <span className="text-[#0A0F2D] font-bold text-sm uppercase tracking-wider">
-              Why Choose Our Agency
-            </span>
-          </div>
+    <section className="py-24 bg-[#FAFAFB]">
+      <div className="max-w-7xl mx-auto px-4 lg:px-12 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left Side: Static Content */}
+          <div className="lg:sticky lg:top-24 flex flex-col justify-center h-full">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[#7C5CFC] font-bold text-2xl">✦</span>
+              <span className="text-[#0A0F2D] font-bold text-sm uppercase tracking-widest">
+                Why Us
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-4xl leading-tight font-serif italic text-[#0A0F2D] mb-8">
+              Elevating the&nbsp;
+              <span className="font-serif italic text-[#7C5CFC]">
+                standard
+              </span>{" "}
+              of <br />
+              healthcare staffing.
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed max-w-lg mb-10">
+              We specialize in bridging the gap between elite medical
+              professionals and the facilities that need them most, ensuring
+              continuity of care through precision matching.
+            </p>
 
-          <h2 className="text-[#0A0F2D] text-xl md:text-3xl font-bold leading-tight max-w-xl mb-24">
-            Choosing the right staffing agency is essential for your{" "}
-            <span className="text-[#8268EE]">home’s comfort </span> and{" "}
-            <span className="text-[#8268EE]">security.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center group">
-              {/* Image & Diamond Container */}
-              <div className="relative mb-20">
-                {/* The Floating Diamond Frame - Rotates slightly on hover */}
-                <div className="absolute -inset-6 border border-gray-300 rotate-45 z-0 transition-all duration-500 group-hover:rotate-[135deg] group-hover:border-[#7C5CFC]/40" />
-
-                {/* Step Number Badge */}
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center font-bold text-black z-20 shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  {step.number}
+            {/* Local Expertise Card */}
+            <div className="bg-[#000B40] p-8 rounded-3xl text-white overflow-hidden relative group mt-auto">
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4 text-[#FFD700]">
+                  <MapPin size={18} />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">
+                    Maryland Regional Office
+                  </span>
                 </div>
-
-                {/* The Actual Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-2xl z-10 shadow-lg transition-transform duration-500 group-hover:scale-105">
-                  <img
-                    src={step.imageUrl}
-                    alt={step.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-
-              {/* Info Card - Changes to Purple on Hover */}
-              <div
-                className="w-full max-w-[340px] h-[300px] rounded-xl p-8 text-center transition-all duration-500 ease-out min-h-[180px] flex flex-col justify-center 
-                  bg-[#F8FBF8] text-gray-900 border border-gray-50
-                  group-hover:bg-[#7C5CFC] group-hover:text-white group-hover:shadow-2xl group-hover:-translate-y-2"
-              >
-                <h3 className="text-lg font-bold mb-3 tracking-wide uppercase transition-colors duration-300">
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-purple-50">
-                  {step.description}
+                <h3 className="text-2xl font-bold mb-3">Rooted in Maryland.</h3>
+                <p className="text-white/60 text-sm font-light leading-relaxed">
+                  We understand the unique facility standards and regulatory
+                  requirements of our local healthcare landscape.
                 </p>
               </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-10 -mt-10" />
             </div>
-          ))}
+          </div>
+
+          {/* Right Side: Feature List */}
+          <div className="grid grid-cols-1 gap-6">
+            {reasons.map((reason, idx) => (
+              <div
+                key={idx}
+                className="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-500"
+              >
+                <div className="flex gap-6">
+                  {/* Updated Icon Container */}
+                  <div className="shrink-0 w-12 h-12 bg-[#000B40] text-[#FFD700] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ">
+                    {reason.icon}
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold text-[#0A0F2D] mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-slate-500 leading-relaxed text-sm font-light">
+                      {reason.desc}
+                    </p>
+
+                    <div className="mt-4 flex items-center gap-3">
+                      <div className="h-[1px] w-6 bg-slate-200 group-hover:w-12 group-hover:bg-[#7C5CFC] transition-all duration-500"></div>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-300 group-hover:text-[#7C5CFC]">
+                        Feature 0{idx + 1}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

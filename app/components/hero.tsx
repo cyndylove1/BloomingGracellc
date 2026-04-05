@@ -21,10 +21,10 @@ export default function Hero() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto pt-[10rem]">
-          <h1 className="text-white text-5xl md:text-[70px] font-bold leading-[1.05] mb-14 max-w-5xl tracking-tighter">
-            Trusted Residential Staffing for&nbsp;
+          <h1 className="text-white text-5xl font-serif md:text-6xl italic leading-[1.05] mb-14 max-w-5xl tracking-tighter">
+            Compassionate Care. Qualified Professionals.&nbsp;
             <span className="text-[#FFD700] border-b-4 border-[#FFD700] italic">
-              Exceptional Living
+              Trusted Staffing
             </span>
           </h1>
 
@@ -34,14 +34,13 @@ export default function Hero() {
             <div className="lg:col-span-4 flex flex-col justify-between self-stretch pb-12">
               <div>
                 <p className="text-gray-400 text-md leading-relaxed mb-10 max-w-sm">
-                  We provide highly trained, vetted, and professional household
-                  staff tailored to your lifestyle so you can enjoy comfort,
-                  privacy, and peace of mind.
+                  Connecting healthcare facilities and families in Baltimore
+                  with licensed, vetted, and experienced caregivers.
                 </p>
 
                 <div className="flex items-center gap-6 mb-12">
                   <button className="bg-[#FFD700] text-[#0A0F2D] px-8 py-4 rounded-lg font-bold text-base flex items-center gap-2 hover:bg-yellow-400  shadow-md transition-all duration-300">
-                    Apply for a Role
+                    Apply as Caregiver
                     <ArrowUpRight
                       size={18}
                       className="transition-transform group-hover:translate-x-1"
@@ -51,7 +50,7 @@ export default function Hero() {
               </div>
 
               {/* Experience Badge - Placed at the bottom left */}
-              <div className="bg-[#6354E1] text-white p-8 rounded-3xl w-64 shadow-2xl relative overflow-hidden group mt-auto lg:translate-y-16 z-20">
+              <div className="bg-[#7C5CFC] text-white p-8 rounded-3xl w-64 shadow-2xl relative overflow-hidden group mt-auto lg:translate-y-16 z-20">
                 <ShieldCheck className="absolute -right-4 -bottom-4 w-24 h-24 text-white/10 group-hover:scale-110 transition-transform" />
                 <h3 className="text-4xl font-bold mb-2">200+</h3>
                 <p className="text-[12px] font-medium opacity-80 uppercase tracking-widest leading-tight">
@@ -64,7 +63,7 @@ export default function Hero() {
             <div className="lg:col-span-8 relative">
               <div className="rounded-[20px] overflow-hidden border-[15px] border-[#0A0F2D] border-b-0 shadow-2xl translate-y-8 lg:translate-y-16">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2070"
+                  src="/assets/nanny.jpg"
                   alt="Luxury modern estate interior"
                   className="w-full h-auto min-h-[400px] object-cover rounded-t-[35px]"
                 />

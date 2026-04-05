@@ -5,7 +5,25 @@ import Navbar from "../components/navbar";
 export default function Contact() {
   return (
     <>
-      <Navbar />
+      <section className="bg-[#000B40] pt-40  pb-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center items-center gap-2 mb-6">
+            <div className="h-[1px] w-12 bg-[#FFD700]/50" />
+            <span className="text-[#FFD700] font-bold text-sm uppercase tracking-[0.4em]">
+              Contact Us
+            </span>
+            <div className="h-[1px] w-12 bg-[#FFD700]/50" />
+          </div>
+          <h1 className="text-white text-5xl md:text-6xl font-serif italic mb-6">
+            The Legacy & Trust <span className="text-[#7C5CFC]">Approach</span>
+          </h1>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            Ready to elevate your staffing standards? Fill out the form below
+            and our coordination team will handle the rest. Excellence is just a
+            message away.
+          </p>
+        </div>
+      </section>
       <section className="bg-[#D1D5F5] pb-20 pt-[10rem] px-4 md:px-6 lg:px-12 relative overflow-hidden font-sans">
         {/* Decorative Swirl (Left side background) */}
         <div className="absolute left-[-10%] bottom-0 h-[60%] w-[40%] opacity-10 pointer-events-none">
@@ -39,8 +57,9 @@ export default function Contact() {
                 Contact Us
               </span>
             </div>
-            <h2 className="text-xl md:text-3xl font-bold text-[#0A0F2D]">
-              Let's Start the <span className="text-[#8268EE]">Conversation</span>
+            <h2 className="text-xl md:text-3xl font-serif italics text-[#0A0F2D]">
+              Let's Start the{" "}
+              <span className="text-[#7C5CFC]">Conversation</span>
             </h2>
           </div>
 
@@ -107,7 +126,7 @@ export default function Contact() {
             {/* Right Side: Contact Info */}
             <div className="w-full lg:w-[350px] space-y-6">
               {/* Location Card */}
-              <div className="group bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:bg-[#8268EE] hover:shadow-xl hover:-translate-y-1">
+              <div className="group bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:bg-[#7C5CFC] hover:shadow-xl hover:-translate-y-1">
                 <div className="w-12 h-12 bg-[#7C5CFC]/10 rounded-full flex items-center justify-center text-[#8268EE] transition-colors group-hover:bg-white/20 group-hover:text-white shrink-0">
                   <MapPin size={24} />
                 </div>
@@ -116,8 +135,7 @@ export default function Contact() {
                     Our Location
                   </h4>
                   <p className="text-gray-500 text-sm leading-relaxed mt-1 transition-colors group-hover:text-purple-100">
-                    8708 Technology Forest Pl Suite 125 -G, The Woodlands, TX
-                    77381
+                    Baltimore, MD
                   </p>
                 </div>
               </div>

@@ -54,7 +54,7 @@ export default function ServicesSection() {
           {serviceCards.map((card, idx) => (
             <div
               key={idx}
-              className="group rounded-[10px] p-4 shadow-xl overflow-hidden border-[1px] border-black/10 bg-[#8268EE]/30 transition-all duration-300 hover:bg-[#8268EE] cursor-pointer"
+              className="group rounded-[10px] p-4 shadow-xl overflow-hidden border-[1px] border-black/10 bg-[#8268EE]/30 transition-all duration-300 hover:bg-[#F8FBF8] cursor-pointer"
             >
               <div className="rounded-[10px] overflow-hidden mb-6 h-64 border border-black/5">
                 <img

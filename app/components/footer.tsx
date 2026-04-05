@@ -28,9 +28,9 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-                We combine industry expertise with a personal touch to help
-                families find, train, and manage the perfect domestic staff with
-                total confidence.
+                Blooming Grace LLC is committed to delivering excellence in
+                healthcare staffing through innovation, compassion, and
+                professionalism.
               </p>
               {/* <div className="flex gap-3 pt-2">
                 <SocialCircle icon={<Facebook size={18} />} active />
@@ -44,6 +44,11 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <h4 className="text-lg font-semibold mb-6">Support</h4>
               <ul className="space-y-4 text-gray-400 text-sm">
+                <li>
+                  <Link href="/" className="hover:text-[#FFD700] transition">
+                    Home
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/about"
@@ -62,10 +67,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/blog"
+                    href="/careers"
                     className="hover:text-[#FFD700] transition"
                   >
-                    Blog
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/employer"
+                    className="hover:text-[#FFD700] transition"
+                  >
+                    Employer
                   </Link>
                 </li>
                 <li>
