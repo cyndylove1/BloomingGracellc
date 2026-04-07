@@ -12,6 +12,7 @@ import {
 import Cta from "../components/ui/cta";
 import Link from "next/link";
 import Button from "../components/button";
+import UploadFile from "../components/uploadFile";
 
 export default function Careers() {
   const BENTO_TRANSITION_BASE = {
@@ -223,21 +224,7 @@ export default function Careers() {
               ))}
             </ul>
           </div>
-
-          <div className="w-full md:w-1/2 relative z-10">
-            <div className="bg-white/5 border-2 border-dashed border-white/20 rounded-3xl p-10 flex flex-col items-center text-center group hover:border-[#FFD700]/50 transition-colors cursor-pointer">
-              <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mb-6 shadow-xl shadow-[#FFD700]/20">
-                <Upload className="text-[#000B40]" />
-              </div>
-              <p className="text-white font-bold text-lg mb-2">Upload Resume</p>
-              <p className="text-white/40 text-xs">
-                Support for PDF, DOCX, and JPG
-              </p>
-              <Link href="/contact" className="mt-4">
-                <Button text="Apply Now" className="rounded-md" />
-              </Link>
-            </div>
-          </div>
+          <UploadFile />
         </div>
       </section>
       <Cta />

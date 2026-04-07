@@ -141,9 +141,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Upload Section */}
-                <UploadFile />
-
                 <textarea
                   placeholder="Message"
                   rows={4}
