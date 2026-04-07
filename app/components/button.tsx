@@ -1,4 +1,4 @@
-import { ArrowUpRight, LucideIcon } from "lucide-react";
+import { ArrowRight, LucideIcon } from "lucide-react";
 import { ButtonHTMLAttributes } from "react";
 
 interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,7 +10,7 @@ interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({
   text,
-  icon: Icon = ArrowUpRight,
+  icon: Icon = ArrowRight,
   showIcon = true,
   className = "",
   ...props
@@ -31,7 +31,7 @@ export default function Button({
       {showIcon && (
         <Icon
           size={16}
-          className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 stroke-[3]"
+          className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-0 stroke-[3]"
         />
       )}
     </button>
