@@ -70,7 +70,7 @@ export default function About() {
               </span>
               <div className="h-[1px] w-12 bg-[#FFD700]/50" />
             </div>
-            <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6">
+            <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6 max-w-3xl mx-auto">
               Booming Grace LLC in Care,{" "}
               <span className="text-[#7C5CFC]">Excellence</span> in Service.
             </h1>

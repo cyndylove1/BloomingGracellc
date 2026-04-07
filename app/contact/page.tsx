@@ -47,7 +47,7 @@ export default function Contact() {
             </span>
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
           </div>
-          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6">
+          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6 max-w-xl mx-auto">
             The Legacy & Trust <span className="text-[#7C5CFC]">Approach</span>
           </h1>
           <p className="text-white/60 text-md md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
