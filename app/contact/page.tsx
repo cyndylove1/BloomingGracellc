@@ -1,12 +1,45 @@
 "use client";
-import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
-import Navbar from "../components/navbar";
+import { motion, Variants } from "framer-motion";
+import { MapPin, Phone, Mail, Upload, FileText } from "lucide-react";
+import Button from "../components/button";
+import React, { useState } from "react";
+import UploadFile from "../components/uploadFile";
 
 export default function Contact() {
+  const [fileName, setFileName] = useState<string | null>(null);
+
+  const BENTO_TRANSITION_BASE = {
+    duration: 0.8,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
+
+  const topTextEntry: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ...BENTO_TRANSITION_BASE,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFileName(e.target.files[0].name);
+    }
+  };
+
   return (
     <>
-      <section className="bg-[#000B40] pt-40  pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="bg-[#000B40] pt-40 pb-20 px-6">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={topTextEntry}
+          className="max-w-7xl mx-auto text-center"
+        >
           <div className="flex justify-center items-center gap-2 mb-6">
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
             <span className="text-[#FFD700] font-bold text-sm uppercase tracking-[0.4em]">
@@ -14,18 +47,19 @@ export default function Contact() {
             </span>
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
           </div>
-          <h1 className="text-white text-5xl md:text-6xl font-serif italic mb-6">
+          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6">
             The Legacy & Trust <span className="text-[#7C5CFC]">Approach</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-white/60 text-md md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
             Ready to elevate your staffing standards? Fill out the form below
             and our coordination team will handle the rest. Excellence is just a
             message away.
           </p>
-        </div>
+        </motion.div>
       </section>
+
       <section className="bg-[#D1D5F5] pb-20 pt-[10rem] px-4 md:px-6 lg:px-12 relative overflow-hidden font-sans">
-        {/* Decorative Swirl (Left side background) */}
+        {/* SVG Decorative Background */}
         <div className="absolute left-[-10%] bottom-0 h-[60%] w-[40%] opacity-10 pointer-events-none">
           <svg
             viewBox="0 0 400 600"
@@ -49,7 +83,6 @@ export default function Contact() {
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
-          {/* Header Section */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-6 md:mb-0">
               <span className="text-[#7C5CFC] font-bold text-xl">✦</span>
@@ -63,9 +96,8 @@ export default function Contact() {
             </h2>
           </div>
 
-          {/* Main Card */}
           <div className="bg-white rounded-2xl p-4 md:p-12 shadow-2xl flex flex-col lg:flex-row gap-12">
-            {/* Left Side: Form */}
+            {/* Form Section */}
             <div className="flex-1">
               <h3 className="md:text-2xl text-xl font-bold text-gray-900 mb-2">
                 Send Us A Message
@@ -109,6 +141,9 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* Upload Section */}
+                <UploadFile />
+
                 <textarea
                   placeholder="Message"
                   rows={4}
@@ -116,16 +151,13 @@ export default function Contact() {
                 ></textarea>
 
                 <div className="md:col-span-2 flex justify-end mt-4">
-                  <button className="bg-[#FFD700] w-full md:w-[200px] text-[#0A0F2D] px-8 py-4 flex justify-center rounded-lg font-bold text-base flex items-center gap-2 hover:bg-yellow-400 transition-all shadow-md">
-                    Submit Now <ArrowUpRight size={18} />
-                  </button>
+                  <Button text="Submit Now" className="rounded-md" />
                 </div>
               </form>
             </div>
 
-            {/* Right Side: Contact Info */}
+            {/* Contact Info Side */}
             <div className="w-full lg:w-[350px] space-y-6">
-              {/* Location Card */}
               <div className="group bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:bg-[#7C5CFC] hover:shadow-xl hover:-translate-y-1">
                 <div className="w-12 h-12 bg-[#7C5CFC]/10 rounded-full flex items-center justify-center text-[#8268EE] transition-colors group-hover:bg-white/20 group-hover:text-white shrink-0">
                   <MapPin size={24} />
@@ -140,7 +172,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Phone Card */}
               <div className="group bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:bg-[#7C5CFC] hover:shadow-xl hover:-translate-y-1">
                 <div className="w-12 h-12 bg-[#7C5CFC]/10 rounded-full flex items-center justify-center text-[#8268EE] transition-colors group-hover:bg-white/20 group-hover:text-white">
                   <Phone size={24} />
@@ -155,7 +186,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Email Card */}
               <div className="group bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:bg-[#7C5CFC] hover:shadow-xl hover:-translate-y-1">
                 <div className="w-12 h-12 bg-[#7C5CFC]/10 rounded-full flex items-center justify-center text-[#8268EE] transition-colors group-hover:bg-white/20 group-hover:text-white">
                   <Mail size={24} />

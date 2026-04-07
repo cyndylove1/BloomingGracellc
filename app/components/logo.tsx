@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
 
 export default function Logo() {
   return (
@@ -9,10 +9,9 @@ export default function Logo() {
           <div className="absolute inset-0 w-5 h-5 bg-[#FFD700] rotate-45 scale-50 transition-opacity"></div>
         </div>
         <span className="text-white text-2xl font-serif tracking-tight italic">
-          BloomingGrace-LLC
+          BoomingGrace-LLC
         </span>
       </Link>
-      
     </>
   );
 }

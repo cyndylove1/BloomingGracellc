@@ -1,42 +1,56 @@
 "use client";
-import React from "react";
+import { motion, Variants } from "framer-motion";
 import {
   Building2,
   Users2,
   Zap,
   Home,
   CheckCircle2,
-  ArrowRight,
   FileText,
   Search,
   UserPlus,
   BarChart3,
-  ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
-import Navbar from "../components/navbar";
-import Cta from "../components/cta";
+import Cta from "../components/ui/cta";
+import Button from "../components/button";
 
 export default function Employers() {
+  const BENTO_TRANSITION_BASE = {
+    duration: 0.8,
+
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
+  const topTextEntry: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ...BENTO_TRANSITION_BASE,
+        delay: 0.2,
+      },
+    },
+  };
   const solutions = [
     {
       title: "Temporary Staffing",
-      icon: <Users2 className="text-[#FFD700]" />, // Already Gold
+      icon: <Users2 className="text-[#FFD700]" />,
       desc: "Short-term coverage for vacations, sick leave, or seasonal surges.",
     },
     {
       title: "Permanent Placement",
-      icon: <Building2 className="text-[#FFD700]" />, // Changed to Gold
+      icon: <Building2 className="text-[#FFD700]" />, 
       desc: "Direct-hire solutions to find the perfect long-term fit for your team.",
     },
     {
       title: "Emergency Staffing",
-      icon: <Zap className="text-[#FFD700]" />, // Already Gold
+      icon: <Zap className="text-[#FFD700]" />, 
       desc: "Rapid-response personnel for immediate, last-minute vacancies.",
     },
     {
       title: "Live-in Care",
-      icon: <Home className="text-[#FFD700]" />, // Changed to Gold
+      icon: <Home className="text-[#FFD700]" />, 
       desc: "Round-the-clock dedicated support for private residential needs.",
     },
   ];
@@ -66,14 +80,14 @@ export default function Employers() {
 
   return (
     <>
-      <Navbar />
-
       {/* --- HERO SECTION --- */}
-
       <section className="bg-[#000B40] pt-40 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
-          {" "}
-          {/* Added flex & items-center */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={topTextEntry}
+          className="max-w-7xl mx-auto text-center flex flex-col items-center"
+        >
           <div className="flex justify-center items-center gap-2 mb-6">
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
             <span className="text-[#FFD700] font-bold text-sm uppercase tracking-[0.4em]">
@@ -81,31 +95,26 @@ export default function Employers() {
             </span>
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
           </div>
-          <h1 className="text-white text-5xl md:text-6xl font-serif italic mb-6 max-w-2xl mx-auto">
+          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6 max-w-2xl mx-auto">
             Staffing Your Success with{" "}
             <span className="text-[#7C5CFC]">Precision.</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
-            {" "}
-            {/* Added mb-10 for spacing */}
+          <p className="text-white/60 md:text-lg text-md max-w-2xl mx-auto font-light leading-relaxed mb-10">
             Need staff immediately? Start your request here and we will reach
             out within 2 hours.
           </p>
-          {/* Centering the Link wrapper */}
-        </div>
-        <Link href="/contact" className="w-full flex justify-center">
-          <button className="bg-[#FFD700] w-full md:w-auto text-[#0A0F2D] px-10 py-4 rounded-lg font-bold text-base flex items-center justify-center gap-2 hover:bg-yellow-400 transition-all shadow-md active:scale-95">
-            Get Started <ArrowUpRight size={18} />
-          </button>
-        </Link>
+          <Link href="/contact" className="w-full flex justify-center">
+            <Button text="Get Started" className="rounded-md" />
+          </Link>
+        </motion.div>
       </section>
 
       {/* --- OUR SOLUTIONS --- */}
-      <section className="py-24 px-6 bg-[#D1D5F5]">
+      <section className="py-24 md:px-6 px-4 bg-[#D1D5F5]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-xl">
-              <h2 className="text-[#000B40] text-4xl font-serif italic mb-4">
+              <h2 className="text-[#000B40] md:text-4xl text-3xl font-serif italic mb-4">
                 Flexible Workforce Solutions
               </h2>
               <p className="text-slate-500">
@@ -136,14 +145,13 @@ export default function Employers() {
         </div>
       </section>
 
-      {/* --- HOW IT WORKS (Horizontal Timeline) --- */}
-      <section className="py-24 px-6 bg-[#F8F9FF]">
+      {/* --- HOW IT WORKS */}
+      <section className="py-24 md:px-6 px-4 bg-[#F8F9FF]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-[#000B40] text-3xl font-serif italic mb-16 text-center italic font-serif">
+          <h2 className="text-[#000B40] md:text-3xl text-2xl font-serif italic mb-16 text-center italic font-serif">
             The Partnership Journey
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-            {/* Connector Line for Desktop */}
             <div className="absolute top-12 left-0 w-full h-[2px] bg-slate-200 hidden lg:block -z-0" />
 
             {steps.map((step, i) => (
@@ -167,7 +175,7 @@ export default function Employers() {
       </section>
 
       {/* --- WHY PARTNER WITH US --- */}
-      <section className="py-24 px-6 bg-white overflow-hidden">
+      <section className="py-24 md:px-6 px-4 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
@@ -228,7 +236,6 @@ export default function Employers() {
           </div>
         </div>
       </section>
-
       <Cta />
     </>
   );

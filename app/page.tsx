@@ -1,12 +1,12 @@
 "use client";
-import Hero from "./components/hero";
-import HowWeWork from "./components/howWeWork";
-import WhyUs from "./components/whyus";
-import Testimonials from "./components/testimonial";
-import FAQ from "./components/faq";
-import Cta from "./components/cta";
-import AboutSection from "./components/aboutSection";
-import ServicesSection from "./components/servicesSection";
+import Hero from "./components/ui/hero";
+import WhyUs from "./components/ui/whyus";
+import Testimonials from "./components/ui/testimonial";
+import FAQ from "./components/ui/faq";
+import AboutSection from "./components/ui/aboutSection";
+import Features from "./components/ui/features";
+import Cta from "./components/ui/cta";
+
 
 export default function Home() {
   return (
@@ -18,7 +18,8 @@ export default function Home() {
       {/* <HowWeWork /> */}
       <Testimonials />
       <FAQ />
-      {/* <Cta /> */}
+      <Features/>
+      <Cta />
     </>
   );
 }

@@ -1,21 +1,35 @@
 "use client";
-import React from "react";
+import { motion, Variants } from "framer-motion";
 import {
-  ArrowUpRight,
   Wallet,
   Calendar,
   TrendingUp,
   Clock,
-  FileCheck,
   Upload,
-  Search,
   CheckCircle2,
   Stethoscope,
 } from "lucide-react";
-import Navbar from "../components/navbar";
-import Cta from "../components/cta";
+import Cta from "../components/ui/cta";
+import Link from "next/link";
+import Button from "../components/button";
 
 export default function Careers() {
+  const BENTO_TRANSITION_BASE = {
+    duration: 0.8,
+
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
+  const topTextEntry: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ...BENTO_TRANSITION_BASE,
+        delay: 0.2,
+      },
+    },
+  };
   const benefits = [
     {
       title: "Competitive Pay",
@@ -68,11 +82,14 @@ export default function Careers() {
 
   return (
     <>
-      <Navbar />
-
       {/* --- HERO SECTION --- */}
       <section className="bg-[#000B40] pt-40  pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={topTextEntry}
+          className="max-w-7xl mx-auto text-center"
+        >
           <div className="flex justify-center items-center gap-2 mb-6">
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
             <span className="text-[#FFD700] font-bold text-sm uppercase tracking-[0.4em]">
@@ -80,19 +97,19 @@ export default function Careers() {
             </span>
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
           </div>
-          <h1 className="text-white text-5xl md:text-6xl font-serif italic mb-6 max-w-2xl mx-auto">
+          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6 max-w-2xl mx-auto">
             Empowering Careers in{" "}
             <span className="text-[#7C5CFC]">Compassionate</span> Care.
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            Blooming Grace LLC isn't just a staffing agency; we are a community
+          <p className="text-white/60 md:text-lg text-md max-w-2xl mx-auto font-light leading-relaxed">
+            Booming Grace LLC isn't just a staffing agency; we are a community
             dedicated to professional excellence and human dignity.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* --- WHY WORK WITH US --- */}
-      <section className="py-24 bg-[#D1D5F5] px-6">
+      <section className="py-24 bg-[#D1D5F5] md:px-6 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center pb-10 gap-2">
             <span className="text-[#7C5CFC] font-bold text-2xl">✦</span>
@@ -123,7 +140,7 @@ export default function Careers() {
       </section>
 
       {/* --- ROLES & APPLICATION PROCESS --- */}
-      <section className="py-24 bg-[#E5E7FF]/30 px-6">
+      <section className="py-24 bg-[#E5E7FF]/30 md:px-6 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-20">
             {/* Left: Roles */}
@@ -182,7 +199,7 @@ export default function Careers() {
       </section>
 
       {/* --- RESUME UPLOAD REQUIREMENTS --- */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 md:px-6 px-4 bg-white">
         <div className="max-w-5xl mx-auto bg-[#000B40] rounded-[2rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFC] blur-[120px] opacity-20" />
 
@@ -216,14 +233,13 @@ export default function Careers() {
               <p className="text-white/40 text-xs">
                 Support for PDF, DOCX, and JPG
               </p>
-              <button className="mt-8 bg-white text-[#000B40] px-8 py-3 rounded-xl font-bold text-sm hover:bg-[#FFD700] transition-all flex items-center gap-2">
-                Apply Now <ArrowUpRight size={16} />
-              </button>
+              <Link href="/contact" className="mt-4">
+                <Button text="Apply Now" className="rounded-md" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
       <Cta />
     </>
   );

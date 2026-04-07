@@ -1,13 +1,15 @@
-import { ArrowUpRight, Check } from "lucide-react";
-import Cta from "../components/cta";
+"use client";
+import { motion, Variants } from "framer-motion";
+import Cta from "../components/ui/cta";
 import Link from "next/link";
+import Button from "../components/button";
 
 const services = [
   {
     category: "Residential Care Services",
     description:
       "Flexible, intelligent care tailored to your home environment and personal comfort.",
-    price: "$25", // Optional price placeholder to match your image
+    price: "$25",
     items: [
       "Personal Care Assistance",
       "Companionship",
@@ -41,12 +43,32 @@ const services = [
     items: ["Dementia Care", "Hospice Support", "Rehabilitation Support"],
   },
 ];
+const BENTO_TRANSITION_BASE = {
+  duration: 0.8,
 
+  ease: [0.22, 1, 0.36, 1] as const,
+};
+const topTextEntry: Variants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ...BENTO_TRANSITION_BASE,
+      delay: 0.2,
+    },
+  },
+};
 export default function Services() {
   return (
     <>
-      <section className="bg-[#000B40] pt-40 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="bg-[#000B40] pt-40 pb-20 md:px-6 px-4">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={topTextEntry}
+          className="max-w-7xl mx-auto text-center"
+        >
           <div className="flex justify-center items-center gap-2 mb-6">
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
             <span className="text-[#FFD700] font-bold text-sm uppercase tracking-[0.4em]">
@@ -54,15 +76,15 @@ export default function Services() {
             </span>
             <div className="h-[1px] w-12 bg-[#FFD700]/50" />
           </div>
-          <h1 className="text-white text-5xl md:text-6xl font-serif italic mb-6">
+          <h1 className="text-white text-3xl md:text-6xl font-serif italic mb-6">
             Our Care <span className="text-[#7C5CFC]">Specialties.</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            From private home care to large-scale facility staffing, Blooming
+          <p className="text-white/60 text-md md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            From private home care to large-scale facility staffing, Booming
             Grace LLC provides the professional expertise your health journey
             demands.
           </p>
-        </div>
+        </motion.div>
       </section>
       <section className="bg-[#D1D5F5] pt-[10rem] pb-20 px-4 md:px-8">
         <div className="flex items-center justify-center pb-10 gap-2">
@@ -105,9 +127,7 @@ export default function Services() {
                 {/* Pricing Footer */}
                 <div className="mt-auto">
                   <Link href="/careers">
-                    <button className="bg-[#FFD700] w-full md:w-[200px] text-[#0A0F2D] px-8 py-4 flex justify-center rounded-lg font-bold text-base flex items-center gap-2 hover:bg-yellow-400 transition-all shadow-md">
-                      Apply Now <ArrowUpRight size={18} />
-                    </button>
+                    <Button text="Apply Now" className="rounded-md" />
                   </Link>
                 </div>
               </div>
